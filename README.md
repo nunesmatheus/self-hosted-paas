@@ -1,24 +1,10 @@
-# README
+# Heroku-like deploy on kubernetes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is supposed to be a POC of joining the best of all worlds: the Heroku-like deploy we all love with the price of running on a VM with kubernetes orchestration.
 
-Things you may want to cover:
+Tools that make this possible:
+- Kubernetes(for orchestration of containers)
+- Dokku(for allowing the "git push production master" magic)
+- Heroku(for open-sourcing the buildpacks)
+- Herokuish(for using the buildpacks) https://github.com/gliderlabs/herokuish
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
