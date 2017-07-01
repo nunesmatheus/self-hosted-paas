@@ -14,7 +14,7 @@ gcloud container clusters create CLUSTER_NAME --zone CLUSTER_ZONE --num-nodes=3 
 ```
 Apparently GCP f1-micro instances are not able to acommodate a Deis cluster. I have achieved success setting it up on a 1 node n1-standard-1 instance and not on a 1 node g1-small one.
 
-**Install [Deis](https://github.com/deis/workflow)**
+**Install [Deis](https://github.com/deis/workflow) client**
 ``` bash
 curl -sSL http://deis.io/deis-cli/install-v2.sh | bash # Download Deis
 sudo mv $PWD/deis /usr/local/bin/deis # Move to place in $PATH
