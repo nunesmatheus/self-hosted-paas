@@ -43,7 +43,7 @@ Find LoadBalancer IP:
 ``` bash
 kubectl --namespace=deis describe svc deis-router | grep LoadBalancer
 ```
-Define hostname env var, which is composed by the LoadBalancer IP + ".nip.io", e.g. "35.184.245.126.nip.io"
+Define hostname env var, which is composed by "deis" + the LoadBalancer IP + ".nip.io", e.g. "deis.35.184.245.126.nip.io"
 
 Effectively register the user:
 ``` bash
@@ -57,3 +57,6 @@ The application name will be informed in the output and a remote will be added t
 ``` bash
 git push deis master
 ```
+Note that if there is a "Dockerfile" file in the application it will be deployed based on that, so if the Heorku buildpacks are to be used, the Dockerfile has to be renamed as I didn't find a more sophisticated way to set that.
+
+[More information on supported ways of deploying](https://deis.com/docs/workflow/applications/deploying-apps/)
