@@ -54,6 +54,10 @@ deis register http://$hostname
 ``` bash
 deis create
 ```
+**Add public SSH key to Deis**
+``` bash
+deis keys:add ~/.ssh/id_rsa.pub
+```
 The application name will be informed in the output and a remote will be added to deploy the application, like so:
 ``` bash
 git push deis master
