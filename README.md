@@ -27,13 +27,19 @@ wget https://kubernetes-helm.storage.googleapis.com/helm-v2.5.0-linux-386.tar.gz
 # tar -xzvf helm.tar.gz + mv executable to $PATH location
 helm version
 ```
-**Install [Workflow](https://deis.com/docs/workflow/) on cluster**
+
+**Set up for installing [Deis Workflow](https://deis.com/docs/workflow/) Helm repo**
 ``` bash
 kubectl create sa tiller-deploy -n kube-system
 kubectl create clusterrolebinding helm --clusterrole=cluster-admin --serviceaccount=kube-system:tiller-deploy
 helm init --service-account=tiller-deploy
 helm repo add deis https://charts.deis.com/workflow
-sleep 10 # Wait a bit until there is a Tiller Pod available
+```
+
+**[Set up Cloud Storage](https://deis.com/docs/workflow/installing-workflow/configuring-object-storage/)(cannot be done after installing the helm repo)**
+
+**Install [Deis](https://deis.com/docs/workflow/) on cluster**
+``` bash
 helm install deis/workflow --namespace deis
 ```
 Might take 10 minutes or so until all pods are running. Check with ```watch kubectl get pods --namespace=deis```
